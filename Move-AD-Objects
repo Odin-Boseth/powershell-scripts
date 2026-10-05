@@ -1,11 +1,12 @@
-# Parameters:
-#   -ObjectType  Required. 'User' or 'Computer'. Every name in the input file
-#                is treated as this type.
-#   -WhatIf      Optional. Previews moves without making changes.
-#
-# Examples:
-#   .\Move-Objects.ps1 -ObjectType Computer -WhatIf
-#   .\Move-Objects.ps1 -ObjectType Computer
+   <#
+   .DESCRIPTION
+       Reads names from a text file (one per line) and moves each matching AD object
+       into the target OU, logging each move or failure. Supports -WhatIf.
+   .PARAMETER ObjectType
+       'User' or 'Computer'. Every name in the input file is treated as this type.
+   .EXAMPLE
+       .\Move-Objects.ps1 -ObjectType Computer -WhatIf
+   #>
 [CmdletBinding(SupportsShouldProcess)]
 
 param(
